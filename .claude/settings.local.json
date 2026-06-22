@@ -1,0 +1,6 @@
+{
+  "enabledMcpjsonServers": [
+    "resend"
+  ],
+  "enableAllProjectMcpServers": true
+}

@@ -1,0 +1,275 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── Tipografia ───────────────────────────────────────────────────────────── */
+
+/* Fonte Commit Mono (Carregamento via arquivo local OTF) */
+@font-face {
+  font-family: 'Commit Mono';
+  src: url('/fonts/CommitMono-400-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Commit Mono';
+  src: url('/fonts/CommitMono-400-Italic.otf') format('opentype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Fonte ABC Favorit (Medium Trial e Mono Book OTF) */
+@font-face {
+  font-family: 'ABC Favorit';
+  src: url('/fonts/ABCFavorit-Medium-Trial.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'ABC Favorit';
+  src: url('/fonts/ABCFavorit-Medium-Trial.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Fonte Domaine Display (OTF) */
+@font-face {
+  font-family: 'Domaine';
+  src: url('/fonts/DomaineDisplay-Regular-BF66174a224cb3d.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Domaine';
+  src: url('/fonts/DomaineDisplay-Medium-BF66174a2239729.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Domaine';
+  src: url('/fonts/DomaineDisplay-Bold-BF66174a223c3e2.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ─── Base ─────────────────────────────────────────────────────────────────── */
+
+@layer base {
+  *,
+  *::before,
+  *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    min-height: 100vh;
+    background-color: #0a0a0a;
+    color: #ededed;
+    font-family: theme('fontFamily.sans');
+    font-weight: 400;
+    font-size: 0.875rem;
+    line-height: 1.6;
+    letter-spacing: -0.011em;
+  }
+
+  h1, h2, h3, h4 {
+    font-weight: 600;
+    letter-spacing: -0.03em;
+    color: #ededed;
+    font-family: theme('fontFamily.display');
+  }
+
+  code, pre, kbd {
+    font-family: theme('fontFamily.mono');
+    font-size: 0.8125rem;
+  }
+
+  ::selection {
+    background: rgba(196, 165, 116, 0.25);
+    color: #ffffff;
+  }
+}
+
+/* ─── Components ───────────────────────────────────────────────────────────── */
+
+@layer components {
+
+  /* Layout */
+  .main-content {
+    min-height: 100vh;
+    background: #0a0a0a;
+  }
+
+  /* Cards */
+  .card {
+    background: #111111;
+    border: 1px solid #1e1e1e;
+    border-radius: 0.75rem;
+  }
+
+  .card strong,
+  .card b {
+    color: #ededed;
+  }
+
+  /* Buttons */
+  .btn-primary {
+    background: #ffffff;
+    color: #0a0a0a;
+    border: 1px solid #ffffff;
+  }
+
+  .btn-primary:hover:not(:disabled) {
+    background: #e8e8e8;
+    border-color: #e8e8e8;
+  }
+
+  .btn-primary:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+  }
+
+  .btn-secondary {
+    background: transparent;
+    color: #ededed;
+    border: 1px solid #1e1e1e;
+  }
+
+  .btn-secondary:hover:not(:disabled) {
+    background: rgba(255, 255, 255, 0.04);
+    border-color: #2a2a2a;
+  }
+
+  .btn-danger {
+    background: rgba(229, 72, 77, 0.08);
+    color: #e5484d;
+    border: 1px solid rgba(229, 72, 77, 0.2);
+  }
+
+  .btn-danger:hover:not(:disabled) {
+    background: rgba(229, 72, 77, 0.14);
+  }
+
+  .btn-ghost {
+    background: transparent;
+    color: #888888;
+    border: 1px solid transparent;
+  }
+
+  .btn-ghost:hover:not(:disabled) {
+    color: #ededed;
+    background: rgba(255, 255, 255, 0.04);
+  }
+
+  /* Inputs */
+  .input-primary,
+  .select-primary,
+  .textarea-primary {
+    background: #0a0a0a;
+    border: 1px solid #1e1e1e;
+    color: #ededed;
+    border-radius: 0.5rem;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.875rem;
+    transition: border-color 0.15s ease;
+  }
+
+  .input-primary::placeholder,
+  .select-primary::placeholder,
+  .textarea-primary::placeholder {
+    color: #555555;
+  }
+
+  .input-primary:hover,
+  .select-primary:hover,
+  .textarea-primary:hover {
+    border-color: #2a2a2a;
+  }
+
+  .input-primary:focus,
+  .select-primary:focus,
+  .textarea-primary:focus {
+    border-color: #c4a574;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(196, 165, 116, 0.08);
+  }
+
+  .select-primary {
+    appearance: none;
+    padding-right: 2.25rem;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='2' stroke='%23555555'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M19 9l-7 7-7-7'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.625rem center;
+    background-size: 0.875rem;
+  }
+
+  /* Tables */
+  .table-elevated {
+    border-radius: 0.75rem;
+    border: 1px solid #1e1e1e;
+    background: #111111;
+  }
+
+  /* Form elements inherit font */
+  button, select, input, textarea {
+    font-family: inherit;
+  }
+
+  /* Autofill fix for dark mode */
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 1000px #0a0a0a inset !important;
+    -webkit-text-fill-color: #ededed !important;
+    transition: background-color 5000s ease-in-out 0s;
+  }
+
+  input[type='checkbox'] {
+    border-radius: 0.25rem;
+    accent-color: #c4a574;
+  }
+
+  /* Scrollbar — minimal */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 999px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.15);
+  }
+
+  /* Utilities */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}

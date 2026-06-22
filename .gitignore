@@ -1,0 +1,46 @@
+# ===== Segredos / Ambiente =====
+.env
+.env.*
+!.env.example
+*.local
+
+# ===== Python / Backend =====
+__pycache__/
+*.py[cod]
+*$py.class
+.Python
+venv/
+.venv/
+env/
+ENV/
+.pytest_cache/
+.mypy_cache/
+
+# ===== Banco de dados local =====
+*.db
+*.sqlite
+*.sqlite3
+
+# ===== Node / Frontend =====
+node_modules/
+dist/
+dist-ssr/
+coverage/
+
+# ===== Logs / Saídas temporárias =====
+*.log
+backend_out.log
+tsc_errors.txt
+tsc-errors.txt
+tsc_out.txt
+tsc_out2.txt
+
+# ===== Editores / IDE =====
+.idea/
+*.swp
+*.swo
+*~
+
+# ===== OS =====
+.DS_Store
+Thumbs.db

@@ -1,0 +1,10 @@
+{
+  "context_servers": {
+    "resend": {
+      "source": "custom",
+      "type": "http",
+      "url": "https://resend.com/docs/mcp",
+      "headers": {}
+    }
+  }
+}
