@@ -183,13 +183,13 @@ npm run dev
 
 ## 🔑 Sua Chave de API
 
-Sua chave Resend está em: `backend/config.py`
+Sua chave Resend deve ficar em `backend/.env` (NUNCA versionada). Veja `backend/.env.example`.
 
-```python
-RESEND_API_KEY = "re_ayxUz4Qi_3eJCG8y1gKUYs5g7jHFbjAGW"
+```dotenv
+RESEND_API_KEY=re_sua_chave_aqui
 ```
 
-**Não exponha isso em produção!** Use variáveis de ambiente.
+**Nunca exponha sua chave!** Sempre use variáveis de ambiente (`.env`).
 
 ---
 
@@ -307,7 +307,7 @@ http://localhost:8000/docs
 
 1. **Python 3.8+**: Necessário para rodar FastAPI
 2. **Node.js 16+**: Necessário para rodar React
-3. **Chave API Resend**: Já está configurada (`re_ayxUz4Qi_3eJCG8y1gKUYs5g7jHFbjAGW`)
+3. **Chave API Resend**: Configure em `backend/.env` (use `backend/.env.example` como base)
 4. **Porta 8000**: Backend usa esta porta
 5. **Porta 3000**: Frontend usa esta porta
 
